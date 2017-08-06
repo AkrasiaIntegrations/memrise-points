@@ -41,7 +41,6 @@ app.post("/fetch", function(req, res) {
     if (!error && response.statusCode == 200) {
       var $ = cheerio.load(body);
       var elem = $('ul.profile-stats').children('li').eq(3).find('strong');
-      console.log(elem.html());
       var solvedProblemsCount = parseInt(elem.text().replace(',', ''));
       
       // Create the datapoint with value (and optional comment)
